@@ -72,7 +72,6 @@ function concatenateStrings(value1, value2) {
  *   getFirstChar('') => ''
  */
 function getFirstChar(value) {
-  if (value.length === 0) return '';
   return value.charAt(0);
 }
 
