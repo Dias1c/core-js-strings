@@ -355,8 +355,6 @@ function isPalindrome(str) {
     .reverse()
     .join('');
 
-  console.log('str', str, p1, p2);
-
   return p1 === p2;
 }
 
