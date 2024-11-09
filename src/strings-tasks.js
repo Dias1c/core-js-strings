@@ -182,8 +182,9 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  if (!str) return 0;
+  return str.split('').reduce((prev, item) => item.charCodeAt(0) + prev, 0);
 }
 
 /**
