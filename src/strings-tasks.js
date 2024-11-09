@@ -505,6 +505,7 @@ function getCardId(value) {
   else if (weigth === 'J') result += 10;
   else if (weigth === 'Q') result += 11;
   else if (weigth === 'K') result += 12;
+
   switch (value.at(-1)) {
     case '♣':
       break;
