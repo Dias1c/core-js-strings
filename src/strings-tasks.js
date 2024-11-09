@@ -494,8 +494,34 @@ function encodeToRot13(/* str */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  if (!value) return -1;
+  if (value.length !== 2 && value.length !== 3) return -1;
+
+  const weigth = value.replace(/[♣♦♥♠]/, '');
+
+  let result = 0;
+  if (Number.isFinite(Number(weigth))) result += Number(weigth) - 1;
+  else if (weigth === 'J') result += 10;
+  else if (weigth === 'Q') result += 11;
+  else if (weigth === 'K') result += 12;
+  switch (value.at(-1)) {
+    case '♣':
+      break;
+    case '♦':
+      result += 13;
+      break;
+    case '♥':
+      result += 26;
+      break;
+    case '♠':
+      result += 39;
+      break;
+    default:
+      break;
+  }
+
+  return result;
 }
 
 module.exports = {
